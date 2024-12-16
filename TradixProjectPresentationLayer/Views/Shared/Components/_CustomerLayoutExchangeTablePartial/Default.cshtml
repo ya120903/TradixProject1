@@ -1,0 +1,111 @@
+﻿<div style="width: 80%; margin: auto;">
+   
+
+    <!-- Günlük Değişim Grafiği -->
+    <h2>Günlük Değişim</h2>
+    <canvas id="dailyChart"></canvas>
+
+    <!-- Aylık Değişim Grafiği -->
+    <h2>Aylık Değişim</h2>
+    <canvas id="monthlyChart"></canvas>
+</div>
+
+<!-- Grafik Altındaki Alan -->
+<div style="width: 80%; margin: auto; margin-top: 20px;">
+    <p><strong>Grafik Açıklaması:</strong> Altının günlük ve aylık fiyat değişimlerini gösteren grafikler yukarıda yer almaktadır.</p>
+    <p><strong>Not:</strong> Günlük grafik, belirli bir dönemdeki günlük açılış fiyatlarına dayalı olarak oluşturulmuştur, aylık grafik ise aylık değişimleri göstermektedir.</p>
+</div>
+
+<script>
+    // Günlük veriler
+    const dailyFiyatlar = [
+        2941, 2937, 2933, 2906, 3018, 2963, 2941, 2923, 2904,
+        2846, 2848, 2839, 2873, 2896, 2967, 2990, 2929, 3027,
+        3021, 3023, 3028
+    ];
+    const dailyTarihler = [
+        "29.11.2024", "28.11.2024", "27.11.2024", "26.11.2024", "25.11.2024",
+        "22.11.2024", "21.11.2024", "20.11.2024", "19.11.2024", "18.11.2024",
+        "15.11.2024", "14.11.2024", "13.11.2024", "12.11.2024", "11.11.2024",
+        "08.11.2024", "07.11.2024", "06.11.2024", "05.11.2024", "04.11.2024",
+        "01.11.2024"
+    ];
+
+    // Aylık veriler (her ayın başındaki fiyat)
+    const monthlyFiyatlar = [
+        2900, 2950, 3000, 3050, 3100, 3200, 3300, 3400, 3500, 3600, 3700, 3800
+    ];
+    const monthlyTarihler = [
+        "Kasım 2024", "Ekim 2024", "Eylül 2024", "Ağustos 2024", "Temmuz 2024",
+        "Haziran 2024", "Mayıs 2024", "Nisan 2024", "Mart 2024", "Şubat 2024",
+        "Ocak 2024", "Aralık 2023"
+    ];
+
+    // Günlük grafik oluşturma
+    var dailyCtx = document.getElementById('dailyChart').getContext('2d');
+    var dailyChart = new Chart(dailyCtx, {
+        type: 'line',
+        data: {
+            labels: dailyTarihler,
+            datasets: [{
+                label: 'Günlük Değişim Fiyatları',
+                data: dailyFiyatlar,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Altın Fiyatlarının Günlük Değişimi'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+
+    // Aylık grafik oluşturma
+    var monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
+    var monthlyChart = new Chart(monthlyCtx, {
+        type: 'line',
+        data: {
+            labels: monthlyTarihler,
+            datasets: [{
+                label: 'Aylık Değişim Fiyatları',
+                data: monthlyFiyatlar,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Altın Fiyatlarının Aylık Değişimi'
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+</script>

@@ -1,0 +1,689 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döviz Tabloları</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5; /* Genel arka plan rengi */
+            font-family: 'Arial', sans-serif;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            }
+
+        .card-title {
+            color: #007bff; /* Mavi başlık */
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-body {
+            background-color: #f8f9fa; /* Açık gri arka plan */
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+            .card-body:hover {
+                background-color: #e9ecef; /* Hover durumunda daha koyu gri */
+            }
+
+        .card-text {
+            color: #495057;
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .row {
+            margin-bottom: 2rem;
+        }
+
+        .card-text span {
+            font-weight: bold;
+        }
+
+        /* Farklı döviz türlerine özel renkler */
+        .usd {
+            border-left: 5px solid #28a745;
+        }
+
+        .eur {
+            border-left: 5px solid #17a2b8;
+        }
+
+        .gbp {
+            border-left: 5px solid #ffc107;
+        }
+
+        .aud {
+            border-left: 5px solid #fd7e14;
+        }
+
+        .cad {
+            border-left: 5px solid #dc3545;
+        }
+
+        .chf {
+            border-left: 5px solid #6610f2;
+        }
+
+        .cny {
+            border-left: 5px solid #fd9a38;
+        }
+
+        .rub {
+            border-left: 5px solid #6f42c1;
+        }
+
+        .sek {
+            border-left: 5px solid #8e44ad;
+        }
+
+        .aed {
+            border-left: 5px solid #f39c12;
+        }
+
+        .bgn {
+            border-left: 5px solid #e74c3c;
+        }
+
+        .byr {
+            border-left: 5px solid #2ecc71;
+        }
+
+        .dkk {
+            border-left: 5px solid #34495e;
+        }
+
+        .irr {
+            border-left: 5px solid #95a5a6;
+        }
+
+        .jpy {
+            border-left: 5px solid #1abc9c;
+        }
+
+        .kwd {
+            border-left: 5px solid #16a085;
+        }
+
+        .nok {
+            border-left: 5px solid #f1c40f;
+        }
+
+        .pkr {
+            border-left: 5px solid #d35400;
+        }
+
+        .qar {
+            border-left: 5px solid #e67e22;
+        }
+
+        .ron {
+            border-left: 5px solid #f39c12;
+        }
+
+        .sar {
+            border-left: 5px solid #3498db;
+        }
+
+        .tjs {
+            border-left: 5px solid #9b59b6;
+        }
+
+        .zar {
+            border-left: 5px solid #e74c3c;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .col-md-4 {
+                max-width: 100%;
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Döviz </h2>
+
+        <!-- Döviz Kartları -->
+        <div class="row g-3">
+            <!-- Döviz türleri için kartlar -->
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">AMERİKAN DOLARI</h5>
+                        <p class="card-text">Alış: <span>34,8753 </span></p>
+                        <p class="card-text">Satış: <span>34,8866 </span></p>
+                        <p class="card-text">Fark%: <span>%0.04 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center eur">
+                    <div class="card-body">
+                        <h5 class="card-title">EURO</h5>
+                        <p class="card-text">Alış: <span>36,6945 </span></p>
+                        <p class="card-text">Satış: <span>36,7132 </span></p>
+                        <p class="card-text">Fark%: <span>%0.23 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center gbp">
+                    <div class="card-body">
+                        <h5 class="card-title">İNGİLİZ STERLİNİ</h5>
+                        <p class="card-text">Alış: <span>44,4058 </span></p>
+                        <p class="card-text">Satış: <span>44,4337 </span></p>
+                        <p class="card-text">Fark%: <span>%-0.13 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center aud">
+                    <div class="card-body">
+                        <h5 class="card-title">AVUSTRALYA DOLARI</h5>
+                        <p class="card-text">Alış: <span>22,2521 </span></p>
+                        <p class="card-text">Satış: <span>22,2699 </span></p>
+                        <p class="card-text">Fark%: <span>%0.22 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center cad">
+                    <div class="card-body">
+                        <h5 class="card-title">KANADA DOLARI</h5>
+                        <p class="card-text">Alış: <span>24,5788 </span></p>
+                        <p class="card-text">Satış: <span>24,5893 </span></p>
+                        <p class="card-text">Fark%: <span>%-0.13 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center chf">
+                    <div class="card-body">
+                        <h5 class="card-title">İSVİÇRE FRANKI</h5>
+                        <p class="card-text">Alış: <span>39,2311 </span></p>
+                        <p class="card-text">Satış: <span>39,2633 </span></p>
+                        <p class="card-text">Fark%: <span>%-0.43 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diğer döviz türleri -->
+            <div class="col-md-4">
+                <div class="card text-center cny">
+                    <div class="card-body">
+                        <h5 class="card-title">ÇİN YUANI</h5>
+                        <p class="card-text">Alış: <span>4,7931 </span></p>
+                        <p class="card-text">Satış: <span>4,7968 </span></p>
+                        <p class="card-text">Fark%: <span>%0.13</span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">RUS RUBLESİ</h5>
+                        <p class="card-text">Alış: <span>0,3338 </span></p>
+                        <p class="card-text">Satış: <span>0,3339 </span></p>
+                        <p class="card-text">Fark%: <span>%0.1 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">İSVEÇ KRONU</h5>
+                        <p class="card-text">Alış: <span>3,1725 </span></p>
+                        <p class="card-text">Satış: <span>3,1752 </span></p>
+                        <p class="card-text">Fark%: <span>%-0.07 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">BAE DİRHEMİ</h5>
+                        <p class="card-text">Alış: <span>9,4944 </span></p>
+                        <p class="card-text">Satış: <span>9,4989 </span></p>
+                        <p class="card-text">Fark%: <span>%0.04 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">BULGAR LEVASI</h5>
+                        <p class="card-text">Alış: <span>18,6825 </span></p>
+                        <p class="card-text">Satış: <span>18,8362 </span></p>
+                        <p class="card-text">Fark%: <span>%0.2 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">JAPON YENİ</h5>
+                        <p class="card-text">Alış: <span>0,2295 </span></p>
+                        <p class="card-text">Satış: <span>0,23 </span></p>
+                        <p class="card-text">Fark%: <span>%0.52 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">KUVEYT DİNARI</h5>
+                        <p class="card-text">Alış: <span>113,173 </span></p>
+                        <p class="card-text">Satış: <span>113,5571 </span></p>
+                        <p class="card-text">Fark%: <span>%0.02 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">SUUDİ RİYALİ</h5>
+                        <p class="card-text">Alış: <span>9,2683 </span></p>
+                        <p class="card-text">Satış: <span>9,2952 </span></p>
+                        <p class="card-text">Fark%: <span>%-0.03 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">GÜNEY AFRİKA RANDI</h5>
+                        <p class="card-text">Alış: <span>1,9623 </span></p>
+                        <p class="card-text">Satış: <span>1,9636 </span></p>
+                        <p class="card-text">Fark%: <span>%-0.28 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diğer döviz türlerini buraya eklemeye devam edebilirsiniz -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döviz Tabloları</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5; /* Genel arka plan rengi */
+            font-family: 'Arial', sans-serif;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            }
+
+        .card-title {
+            color: #007bff; /* Mavi başlık */
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-body {
+            background-color: #f8f9fa; /* Açık gri arka plan */
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+            .card-body:hover {
+                background-color: #e9ecef; /* Hover durumunda daha koyu gri */
+            }
+
+        .card-text {
+            color: #495057;
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .row {
+            margin-bottom: 2rem;
+        }
+
+        .card-text span {
+            font-weight: bold;
+        }
+
+        /* Farklı döviz türlerine özel renkler */
+        .usd {
+            border-left: 5px solid #28a745;
+        }
+
+        .eur {
+            border-left: 5px solid #17a2b8;
+        }
+
+        .gbp {
+            border-left: 5px solid #ffc107;
+        }
+
+        .aud {
+            border-left: 5px solid #fd7e14;
+        }
+
+        .cad {
+            border-left: 5px solid #dc3545;
+        }
+
+        .chf {
+            border-left: 5px solid #6610f2;
+        }
+
+        .cny {
+            border-left: 5px solid #fd9a38;
+        }
+
+        .rub {
+            border-left: 5px solid #6f42c1;
+        }
+
+        .sek {
+            border-left: 5px solid #8e44ad;
+        }
+
+        .aed {
+            border-left: 5px solid #f39c12;
+        }
+
+        .bgn {
+            border-left: 5px solid #e74c3c;
+        }
+
+        .byr {
+            border-left: 5px solid #2ecc71;
+        }
+
+        .dkk {
+            border-left: 5px solid #34495e;
+        }
+
+        .irr {
+            border-left: 5px solid #95a5a6;
+        }
+
+        .jpy {
+            border-left: 5px solid #1abc9c;
+        }
+
+        .kwd {
+            border-left: 5px solid #16a085;
+        }
+
+        .nok {
+            border-left: 5px solid #f1c40f;
+        }
+
+        .pkr {
+            border-left: 5px solid #d35400;
+        }
+
+        .qar {
+            border-left: 5px solid #e67e22;
+        }
+
+        .ron {
+            border-left: 5px solid #f39c12;
+        }
+
+        .sar {
+            border-left: 5px solid #3498db;
+        }
+
+        .tjs {
+            border-left: 5px solid #9b59b6;
+        }
+
+        .zar {
+            border-left: 5px solid #e74c3c;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .col-md-4 {
+                max-width: 100%;
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Kripto </h2>
+
+        <!-- Döviz Kartları -->
+        <div class="row g-3">
+            <!-- Döviz türleri için kartlar -->
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">BİTCOİN TETHERUS</h5>
+                        <p class="card-text">Son: <span>101.371,99 </span></p>
+                        <p class="card-text">%Değişim: <span>%1 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center eur">
+                    <div class="card-body">
+                        <h5 class="card-title">BİTCOİN AMERİKAN DOLARI</h5>
+                        <p class="card-text">Son: <span>101.364,60 </span></p>
+                        <p class="card-text">%Değişim: <span>%0.05 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center gbp">
+                    <div class="card-body">
+                        <h5 class="card-title">BİTCOİN TÜRK LİRASI</h5>
+                        <p class="card-text">Son: <span>3.543.349 </span></p>
+                        <p class="card-text">%Değişim: <span>%1.098</span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center aud">
+                    <div class="card-body">
+                        <h5 class="card-title">BİTCOİN TETHERUS</h5>
+                        <p class="card-text">Son: <span>101.371,99 </span></p>
+                        <p class="card-text">%Değişim: <span>%1 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center cad">
+                    <div class="card-body">
+                        <h5 class="card-title">ETHEREUM TETHERUS</h5>
+                        <p class="card-text">Son: <span>3.948,26 </span></p>
+                        <p class="card-text">%Değişim: <span>%4.621 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center chf">
+                    <div class="card-body">
+                        <h5 class="card-title">ETHEREUM AMERİKAN DOLARI</h5>
+                        <p class="card-text">Son: <span>3.947,29 </span></p>
+                        <p class="card-text">%Değişim: <span>%2.91 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diğer döviz türleri -->
+            <div class="col-md-4">
+                <div class="card text-center cny">
+                    <div class="card-body">
+                        <h5 class="card-title">ETHEREUM TÜRK LİRASI</h5>
+                        <p class="card-text">Son: <span>137.967 </span></p>
+                        <p class="card-text">%Değişim: <span>%4.545 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">DOGECOİN TETHERUS</h5>
+                        <p class="card-text">Son: <span>0,4135 </span></p>
+                        <p class="card-text">%Değişim: <span>%1.565 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">DOGECOİN TÜRK LİRASI</h5>
+                        <p class="card-text">Son: <span>14,45 </span></p>
+                        <p class="card-text">%Değişim: <span>%1.489 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">DOGECOİN AMERİKAN DOLARI</h5>
+                        <p class="card-text">Son: <span>0,4135 </span></p>
+                        <p class="card-text">%Değişim: <span>%-0.65 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">ICON TETHERUS</h5>
+                        <p class="card-text">Son: <span>0,237 </span></p>
+                        <p class="card-text">%Değişim: <span>%4.598 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">IDEX TETHERUS</h5>
+                        <p class="card-text">Son: <span>0,07395 </span></p>
+                        <p class="card-text">%Değişim: <span>%-2.247 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title"> KOMODO BİTCOİN</h5>
+                        <p class="card-text">Son: <span>0,00000374 </span></p>
+                        <p class="card-text">%Değişim: <span>%9.357 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">KOMODO TETHERUS</h5>
+                        <p class="card-text">Son: <span>0,3791 </span></p>
+                        <p class="card-text">%Değişim: <span>%10.525 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center usd">
+                    <div class="card-body">
+                        <h5 class="card-title">USD COİN TETHERUS</h5>
+                        <p class="card-text">Son: <span>0,9995 </span></p>
+                        <p class="card-text">%Değişim: <span>%0.04 </span></p>
+                        <p class="card-text">Tarih: <span>12.12.2024 </span></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diğer döviz türlerini buraya eklemeye devam edebilirsiniz -->
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+﻿@model List<TradixProjectPresentationLayer.Models.GunDoviz>
+
+@{
+    ViewData["Title"] = "Döviz Verileri";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Döviz Adı</th>
+                <th>Alış</th>
+                <th>Satış</th>
+                <th>% Fark</th>
+                <th>Tarih</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DovizAdi</td>
+                    <td>@item.Alis</td>
+                    <td>@item.Satis</td>
+                    <td>@item.Fark</td>
+                    <td>@item.Tarih.ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Veri bulunamadı.</p>
+}
+
+
+<canvas id="dovizChart" width="400" height="200"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var gunDovizData = @Html.Raw(ViewBag.GunDovizData);
+
+    var labels = [];
+    var alisData = [];
+    var satisData = [];
+    var farkData = [];
+
+    gunDovizData.forEach(function (item) {
+        labels.push(item.DovizAdi + " (" + item.Tarih.split("T")[0] + ")");
+        alisData.push(item.Alis);
+        satisData.push(item.Satis);
+        farkData.push(item.Fark);
+    });
+
+    var ctx = document.getElementById('dovizChart').getContext('2d');
+    var dovizChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Alış Fiyatı',
+                data: alisData,
+                borderColor: 'green',
+                fill: false
+            },
+            {
+                label: 'Satış Fiyatı',
+                data: satisData,
+                borderColor: 'red',
+                fill: false
+            },
+            {
+                label: 'Fark (%)',
+                data: farkData,
+                borderColor: 'blue',
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                },
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Döviz Adı ve Tarih'
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Fiyat'
+                    }
+                }
+            }
+        }
+    });
+</script>
